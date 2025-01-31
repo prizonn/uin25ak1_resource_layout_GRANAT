@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>uin25ak1</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
+        <script src="ressurser.js"></script>
+    </head>
+    <body>
+        <section class="container">
+            <nav>
+                <ul>
+                    <li class="tab active" data-tab="html">HTML</li>
+                    <li class="tab" data-tab="css">CSS</li>
+                    <li class="tab" data-tab="javascript">JavaScript</li>
+                    <li class="tab" data-tab="react">React</li>
+                    <li class="tab" data-tab="cms">Sanity and headless CMS</li>
+                </ul>
+            </nav>
+            <main>
+                <section class="content" id="html">
+                    <h1>HTML</h1>
+                    <p>HTML står for HyperText Markup Language, og er et strukturspråk som brukes for å lage strukturer til nettside- og applikasjonsgrensesnitt.</p>
+                    <ul>
+                        <li><a href="https://www.w3schools.com/html/">W3Schools</a></li>
+                        <li><a href="https://html.spec.whatwg.org/multipage/">HTML Living standard</a></li>
+                        <li><a href="https://html.com/">HTML.com Tutorials</a></li>
+                    </ul>
+                </section>
+                <section class="content" id="css" style="display: none;">
+                    <h1>CSS</h1>
+                    <p>CSS står for Cascading StyleSheets, og brukes for å sette stilregler på HTML-elementer.</p>
+                </section>
+                <section class="content" id="javascript" style="display: none;">
+                    <h1>JavaScript</h1>
+                    <p>JavaScript er et scriptspråk basert på EcmaScript. JavaScript kjører direkte i nettleseren, og brukes ofte til å manipulere HTML og CSS i webgrensnesnitt.</p>
+                </section>
+                <section class="content" id="react" style="display: none;">
+                    <h1>React</h1>
+                    <p>React er et rammeverk bygget i JavaScript. React bruker komponenter og states for å lage en levende frontend.</p>
+                </section>
+                <section class="content" id="cms" style="display: none;">
+                    <h1>Sanity and headless CMS</h1>
+                    <p>Sanity er et headless CMS som står for innholdsadministrasjon. Innhold hentes inn i applikasjoner via GROQ-spørringer.</p>
+                </section>
+            </main>
+        </section>
+        <script>
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    document.querySelectorAll('.content').forEach(content => content.style.display = 'none');
+                    document.getElementById(this.getAttribute('data-tab')).style.display = 'block';
+                });
+            });
+        </script>
+    </body>
+</html>
